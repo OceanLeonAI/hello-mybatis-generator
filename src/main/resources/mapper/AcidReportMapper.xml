@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leon.generator.mapper.AcidReportMapper">
+  <resultMap id="BaseResultMap" type="com.leon.generator.domain.AcidReport">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="no" jdbcType="VARCHAR" property="no" />
+    <result column="bedNo" jdbcType="VARCHAR" property="bedNo" />
+    <result column="caseNo" jdbcType="VARCHAR" property="caseNo" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="diagnose" jdbcType="VARCHAR" property="diagnose" />
+    <result column="requestItem" jdbcType="VARCHAR" property="requestItem" />
+    <result column="deviceName" jdbcType="VARCHAR" property="deviceName" />
+    <result column="collectTime" jdbcType="VARCHAR" property="collectTime" />
+    <result column="receiveTime" jdbcType="VARCHAR" property="receiveTime" />
+    <result column="reportTime" jdbcType="VARCHAR" property="reportTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, sex, age, no, bedNo, caseNo, doctor, diagnose, requestItem, deviceName, 
+    collectTime, receiveTime, reportTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from acid_report
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from acid_report
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.leon.generator.domain.AcidReport">
+    insert into acid_report (id, name, sex, 
+      age, no, bedNo, caseNo, 
+      doctor, diagnose, requestItem, 
+      deviceName, collectTime, receiveTime, 
+      reportTime)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{age,jdbcType=VARCHAR}, #{no,jdbcType=VARCHAR}, #{bedNo,jdbcType=VARCHAR}, #{caseNo,jdbcType=VARCHAR}, 
+      #{doctor,jdbcType=VARCHAR}, #{diagnose,jdbcType=VARCHAR}, #{requestItem,jdbcType=VARCHAR}, 
+      #{deviceName,jdbcType=VARCHAR}, #{collectTime,jdbcType=VARCHAR}, #{receiveTime,jdbcType=VARCHAR}, 
+      #{reportTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.leon.generator.domain.AcidReport">
+    insert into acid_report
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="no != null">
+        no,
+      </if>
+      <if test="bedNo != null">
+        bedNo,
+      </if>
+      <if test="caseNo != null">
+        caseNo,
+      </if>
+      <if test="doctor != null">
+        doctor,
+      </if>
+      <if test="diagnose != null">
+        diagnose,
+      </if>
+      <if test="requestItem != null">
+        requestItem,
+      </if>
+      <if test="deviceName != null">
+        deviceName,
+      </if>
+      <if test="collectTime != null">
+        collectTime,
+      </if>
+      <if test="receiveTime != null">
+        receiveTime,
+      </if>
+      <if test="reportTime != null">
+        reportTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="no != null">
+        #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="bedNo != null">
+        #{bedNo,jdbcType=VARCHAR},
+      </if>
+      <if test="caseNo != null">
+        #{caseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="doctor != null">
+        #{doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="diagnose != null">
+        #{diagnose,jdbcType=VARCHAR},
+      </if>
+      <if test="requestItem != null">
+        #{requestItem,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectTime != null">
+        #{collectTime,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveTime != null">
+        #{receiveTime,jdbcType=VARCHAR},
+      </if>
+      <if test="reportTime != null">
+        #{reportTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.leon.generator.domain.AcidReport">
+    update acid_report
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=VARCHAR},
+      </if>
+      <if test="no != null">
+        no = #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="bedNo != null">
+        bedNo = #{bedNo,jdbcType=VARCHAR},
+      </if>
+      <if test="caseNo != null">
+        caseNo = #{caseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="doctor != null">
+        doctor = #{doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="diagnose != null">
+        diagnose = #{diagnose,jdbcType=VARCHAR},
+      </if>
+      <if test="requestItem != null">
+        requestItem = #{requestItem,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        deviceName = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectTime != null">
+        collectTime = #{collectTime,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveTime != null">
+        receiveTime = #{receiveTime,jdbcType=VARCHAR},
+      </if>
+      <if test="reportTime != null">
+        reportTime = #{reportTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.leon.generator.domain.AcidReport">
+    update acid_report
+    set name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      age = #{age,jdbcType=VARCHAR},
+      no = #{no,jdbcType=VARCHAR},
+      bedNo = #{bedNo,jdbcType=VARCHAR},
+      caseNo = #{caseNo,jdbcType=VARCHAR},
+      doctor = #{doctor,jdbcType=VARCHAR},
+      diagnose = #{diagnose,jdbcType=VARCHAR},
+      requestItem = #{requestItem,jdbcType=VARCHAR},
+      deviceName = #{deviceName,jdbcType=VARCHAR},
+      collectTime = #{collectTime,jdbcType=VARCHAR},
+      receiveTime = #{receiveTime,jdbcType=VARCHAR},
+      reportTime = #{reportTime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
